@@ -6,17 +6,18 @@
 # Specify the following settings:
 locals {
   # Managed Service for Elasticsearch cluster settings:
-  create_mes        = 1  # Set to 0 to disable cluster creation if you use a standalone Elasticsearch.
-  es_admin_password = "" # Set a password for the Elasticsearch admin user.
+  create_mes        = 1  # Set to 0 to disable cluster creation if you use a standalone Elasticsearch
+  es_admin_password = "" # Set a password for the Elasticsearch admin user
 
   # Managed Service for OpenSearch cluster settings:
-  os_admin_password = "" # Set a password for the OpenSearch admin user.
+  mos_version        = "" # Set desired version of the OpenSearch. For available versions, see the documentation main page: https://yandex.cloud/en/docs/managed-opensearch/.
+  mos_admin_password = "" # Set a password for the OpenSearch admin user
 
   # Specify these settings ONLY AFTER the clusters are created. Then run the "terraform apply" command again.
   # You should set up endpoints using the GUI to obtain their IDs.
-  source_endpoint_id = "" # Set the source endpoint ID.
-  target_endpoint_id = "" # Set the target endpoint ID.
-  transfer_enabled   = 0  # Set to 1 to enable the transfer.
+  source_endpoint_id = "" # Set the source endpoint ID
+  target_endpoint_id = "" # Set the target endpoint ID
+  transfer_enabled   = 0  # Set to 1 to enable the transfer
 
   # The following settings are predefined. Change them only if necessary.
   network_name          = "mes-mos-network"        # Name of the network
@@ -110,7 +111,8 @@ resource "yandex_mdb_opensearch_cluster" "opensearch" {
   security_group_ids = [yandex_vpc_security_group.security-group.id]
 
   config {
-    admin_password = local.os_admin_password
+    version        = local.mos_version
+    admin_password = local.mos_admin_password
 
     opensearch {
       node_groups {
