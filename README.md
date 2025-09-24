@@ -8,8 +8,8 @@
 4. Подготовьте и активируйте трансфер.
 5. Проверьте работу трансфера.
 
-Подробное описание см. в [практическом руководстве](https://cloud.yandex.ru/docs/data-transfer/tutorials/mes-to-mos).
-Сценарий может быть выполнен в [Консоли Управления Yandex Cloud](https://console.cloud.yandex.ru) или с помощью Terraform. Для выполнения сценария с помощью Terraform скачайте конфигурационный файл, [data-transfer-mes-mos.tf](data-transfer-mes-mos.tf). 
+Подробное описание см. в [практическом руководстве](https://yandex.cloud/ru/docs/data-transfer/tutorials/mes-to-mos).
+Сценарий может быть выполнен в [консоли управления Yandex Cloud](https://console.yandex.cloud) или с помощью Terraform. Для выполнения сценария с помощью Terraform скачайте конфигурационный файл, [data-transfer-es-mos.tf](data-transfer-es-mos.tf).
 
 Дополнительные материалы о Yandex Data Transfer:
 * [Доступные трансферы](https://cloud.yandex.ru/docs/data-transfer/transfer-matrix)
